@@ -1,0 +1,180 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Sole Street - Shoes Shop E-Commerce Website Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create a visually striking homepage with hero section, featured products, and navigation",
+      "acceptanceCriteria": [
+        "Hero section is displayed at the top with a compelling headline and CTA button",
+        "A 'Featured Products' section shows at least 4 shoe product cards",
+        "Navigation bar includes logo/brand name, links to collections, cart icon"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Navbar.tsx",
+          "operation": "create",
+          "description": "Create navigation bar component with logo (using frontend/public/assets/generated/sole-street-logo.dim_320x80.png), collection links, and cart icon with item count badge. Apply dark charcoal background with off-white text and amber accents for active states."
+        },
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "create",
+          "description": "Create hero section component using frontend/public/assets/generated/hero-banner.dim_1440x600.png as background image. Include compelling headline, tagline, and amber-colored CTA button to browse collections. Ensure proper responsive layout with overlay text on dark background."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "create",
+          "description": "Create reusable product card component displaying product image, name, price, and 'Add to Cart' button. Use amber accent for button and hover states. Component accepts product data as props and handles click navigation to product detail."
+        },
+        {
+          "path": "frontend/src/components/FeaturedProducts.tsx",
+          "operation": "create",
+          "description": "Create featured products section component that fetches products from backend using getAllProducts() and displays at least 4 product cards in a responsive grid. Handle loading and error states."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create homepage component that composes Navbar, Hero, and FeaturedProducts components. Apply consistent dark charcoal background with proper spacing and layout."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire HomePage as the root route (/). Set up React Router with route definitions for homepage, product listing, product detail, and cart pages. Wrap app with CartProvider for global cart state management."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Build product listing page with grid layout, category filtering, and sorting options",
+      "acceptanceCriteria": [
+        "Products are displayed in a responsive grid (2–4 columns depending on screen size)",
+        "Category filter buttons narrow down the displayed products",
+        "Sort dropdown allows sorting by price (low-high, high-low) and newest",
+        "Each product card shows image, name, price, and an 'Add to Cart' button"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CategoryFilter.tsx",
+          "operation": "create",
+          "description": "Create category filter component with buttons for 'All', 'Sneakers', 'Boots', 'Sandals', and 'Formal'. Active filter uses amber background. Component emits selected category to parent."
+        },
+        {
+          "path": "frontend/src/components/SortDropdown.tsx",
+          "operation": "create",
+          "description": "Create sort dropdown component using shadcn/ui Select component. Options include 'Newest', 'Price: Low to High', 'Price: High to Low'. Apply theme styling with off-white text and dark charcoal background."
+        },
+        {
+          "path": "frontend/src/components/ProductGrid.tsx",
+          "operation": "create",
+          "description": "Create responsive product grid component that displays ProductCard components in 2-4 columns based on screen size. Handle empty state when no products match filters."
+        },
+        {
+          "path": "frontend/src/pages/ProductListingPage.tsx",
+          "operation": "create",
+          "description": "Create product listing page that integrates CategoryFilter, SortDropdown, and ProductGrid. Fetch products using getProductsByCategory() or getAllProducts() based on active filter. Implement client-side sorting logic using getProductsSortedByPrice() for price sorts. Include Navbar at top."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for ProductListingPage at /products path. Ensure navigation from homepage CTA and navbar links to this route."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create product detail page with images, description, size selection, and add to cart",
+      "acceptanceCriteria": [
+        "Product detail page is reachable from the product listing page",
+        "Page displays product name, price, description, and available sizes",
+        "User can select a size before adding to cart",
+        "Add to Cart action updates the cart item count in the navigation bar"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SizeSelector.tsx",
+          "operation": "create",
+          "description": "Create size selector component displaying available sizes as clickable buttons. Selected size uses amber background. Component manages selected size state and emits selection to parent."
+        },
+        {
+          "path": "frontend/src/components/ProductImages.tsx",
+          "operation": "create",
+          "description": "Create product images component displaying main product image with proper aspect ratio and responsive sizing. Reference generated product images from frontend/public/assets/generated/ directory (e.g., shoe-sneaker-white.dim_600x600.png)."
+        },
+        {
+          "path": "frontend/src/pages/ProductDetailPage.tsx",
+          "operation": "create",
+          "description": "Create product detail page that fetches product by id using getProductById(). Display ProductImages, product name, price, description, and SizeSelector. Include 'Add to Cart' button that adds selected product and size to cart context. Show validation error if no size selected. Include Navbar and use dark charcoal background with off-white text."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for ProductDetailPage at /products/:id path. Ensure ProductCard components link to this route with product id parameter."
+        },
+        {
+          "path": "frontend/src/components/Navbar.tsx",
+          "operation": "modify",
+          "description": "Add cart item count badge to cart icon that reads from CartContext. Badge uses amber background for visibility."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Implement shopping cart with quantity controls, subtotal, and session persistence",
+      "acceptanceCriteria": [
+        "Cart displays each item with image, name, size, quantity controls, and line total",
+        "User can remove items or change quantity",
+        "Order subtotal is calculated and displayed",
+        "Cart persists during the session (React state or local storage)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/contexts/CartContext.tsx",
+          "operation": "create",
+          "description": "Create CartContext and CartProvider managing cart state with add, remove, update quantity operations. Persist cart to localStorage on changes and restore on mount. Provide cart items array, total count, and subtotal calculation."
+        },
+        {
+          "path": "frontend/src/components/CartItem.tsx",
+          "operation": "create",
+          "description": "Create cart item component displaying product thumbnail (from generated images), name, size, price, quantity controls (increment/decrement buttons), line total, and remove button. Use amber accents for interactive elements."
+        },
+        {
+          "path": "frontend/src/components/CartSummary.tsx",
+          "operation": "create",
+          "description": "Create cart summary component displaying subtotal calculation from CartContext. Apply consistent theme styling with off-white text on dark charcoal background."
+        },
+        {
+          "path": "frontend/src/pages/CartPage.tsx",
+          "operation": "create",
+          "description": "Create cart page that displays list of CartItem components from CartContext, CartSummary, and empty state message when cart is empty. Include Navbar and maintain theme consistency."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for CartPage at /cart path. Ensure cart icon in Navbar links to this route."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Apply bold, modern streetwear-inspired visual theme consistently across all pages",
+      "acceptanceCriteria": [
+        "Color palette uses dark charcoal (#1a1a1a or similar), off-white (#f5f0eb or similar), and amber/orange accents (#e8891a or similar)",
+        "Typography uses a clean modern sans-serif font consistently throughout",
+        "Theme is applied uniformly on homepage, listing page, product detail, and cart"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom colors: 'charcoal' (#1a1a1a), 'off-white' (#f5f0eb), 'amber-accent' (#e8891a). Configure modern sans-serif font family (e.g., 'Inter', system-ui) as default. Add custom spacing and border radius values for consistent streetwear aesthetic."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Set global body background to charcoal color, default text to off-white, and apply base typography styles. Define reusable utility classes for buttons, cards, and containers with theme colors. Ensure smooth transitions and hover effects using amber accent."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "frontend/src/index.css": "Global styles with OKLCH dark charcoal/amber design system, Barlow + Barlow Condensed font imports, and utility classes for the streetwear theme.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with Barlow fonts, custom charcoal/offwhite/amber brand color tokens, shadow utilities, and fade-in animation.",
+  "frontend/src/contexts/CartContext.tsx": "React context providing cart state (items, count, subtotal) with add/remove/update operations and localStorage persistence.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations: getAllProducts, getProductsByCategory, getProductsSortedByPrice, getProductById, and initialize.",
+  "frontend/src/lib/utils.ts": "Utility functions including cn() for class merging, formatPrice() for currency display, and getProductImage() to map backend image paths to generated assets.",
+  "frontend/src/components/Navbar.tsx": "Sticky navigation bar with logo, desktop/mobile nav links for all categories, and cart icon with item count badge.",
+  "frontend/src/components/Hero.tsx": "Full-width hero with background image, gradient overlay, headline, and CTA buttons; navigate calls now pass `search: { category: undefined }` or `search: { category: 'Sneakers' }` to satisfy TypeScript.",
+  "frontend/src/components/ProductCard.tsx": "Reusable product card with image, category badge, name, price, quick-add-to-cart button, and click navigation to detail page.",
+  "frontend/src/components/FeaturedProducts.tsx": "Homepage featured products section with loading skeletons and 4-column grid; Link components now use `search={{ category: undefined }}` to match the required search param type.",
+  "frontend/src/components/CategoryFilter.tsx": "Row of filter buttons for All/Sneakers/Boots/Sandals/Formal with amber active state.",
+  "frontend/src/components/SortDropdown.tsx": "Shadcn Select dropdown for sorting products by newest, price ascending, or price descending.",
+  "frontend/src/components/ProductGrid.tsx": "Responsive 2–4 column product grid with loading skeletons and empty state illustration.",
+  "frontend/src/components/SizeSelector.tsx": "Grid of size buttons with amber highlight for selected size.",
+  "frontend/src/components/CartItem.tsx": "Cart row showing product thumbnail, name, size, quantity controls, line total, and remove button.",
+  "frontend/src/components/CartSummary.tsx": "Sticky order summary panel with subtotal, shipping, total, checkout CTA, and continue shopping; uses `search: { category: undefined }` to satisfy the typed route search params.",
+  "frontend/src/components/Footer.tsx": "Full footer with logo, shop category links, info links, copyright, and caffeine.ai attribution with UTM tracking.",
+  "frontend/src/pages/HomePage.tsx": "Homepage composing Navbar, Hero, category strip, FeaturedProducts, promo banner, and Footer; auto-initializes backend if empty.",
+  "frontend/src/pages/ProductListingPage.tsx": "Product listing page with category filter, sort dropdown, product count, and responsive grid; supports URL search param for initial category.",
+  "frontend/src/pages/ProductDetailPage.tsx": "Product detail page with image, name, price, description, size selector, and add-to-cart feedback; all navigate calls to /products now pass `search: { category: undefined }`.",
+  "frontend/src/pages/CartPage.tsx": "Shopping cart page with item list, quantity controls, order summary sidebar, and empty state; all navigate calls to /products now pass `search: { category: undefined }`.",
+  "frontend/src/App.tsx": "Root app component setting up TanStack Router with routes for home, product listing, product detail, and cart; wraps everything in CartProvider."
+}

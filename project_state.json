@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "A website for a shoe shop. Includes product listings, shopping experience, and relevant e-commerce features.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Bold street-style shoe shop logo mark — angular sole silhouette with brand wordmark 'Sole Street' in a modern sans-serif (sole-street-logo.dim_320x80.png)\n- Full-width hero banner showing stylish sneakers on a dark background with dramatic side lighting (hero-banner.dim_1440x600.png)\n- Product photo: white minimalist sneaker on clean background (shoe-sneaker-white.dim_600x600.png)\n- Product photo: black leather ankle boot on clean background (shoe-boot-black.dim_600x600.png)\n- Product photo: tan suede casual loafer on clean background (shoe-loafer-tan.dim_600x600.png)\n- Product photo: neon-accented running sneaker on clean background (shoe-runner-neon.dim_600x600.png)\n- Product photo: brown classic oxford dress shoe on clean background (shoe-oxford-brown.dim_600x600.png)\n- Product photo: strappy sandal in nude/beige tones on clean background (shoe-sandal-nude.dim_600x600.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-visually-striking-homepage-with-a-hero-section-featuring-a-tagline-featured-new-arrival-shoe-products-and-clear-call-to-action-buttons-to-browse-collections",
+      "title": "Create a visually striking homepage with a hero section featuring a tagline, featured/new-arrival shoe products, and clear call-to-action buttons to browse collections.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-product-listing-page-that-displays-all-available-shoes-in-a-grid-layout-with-filtering-by-category-e-g-sneakers-boots-sandals-formal-and-sorting-options-price-newest",
+      "title": "Build a product listing page that displays all available shoes in a grid layout, with filtering by category (e.g., Sneakers, Boots, Sandals, Formal) and sorting options (price, newest).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-product-detail-page-accessible-by-clicking-a-product-card-showing-multiple-product-images-full-description-available-sizes-price-and-an-add-to-cart-button",
+      "title": "Create a product detail page accessible by clicking a product card, showing multiple product images, full description, available sizes, price, and an 'Add to Cart' button.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-shopping-cart-sidebar-or-page-that-lists-added-items-with-quantity-controls-subtotal-and-a-checkout-summary-persist-cart-state-in-the-frontend-session",
+      "title": "Implement a shopping cart sidebar or page that lists added items with quantity controls, subtotal, and a checkout summary. Persist cart state in the frontend session.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-bold-modern-streetwear-inspired-visual-theme-dark-charcoal-backgrounds-warm-off-white-text-vibrant-amber-orange-accent-color-for-ctas-and-highlights-clean-sans-serif-typography-and-generous-whitespace-maintain-this-theme-consistently-across-all-pages-and-components",
+      "title": "Apply a bold, modern streetwear-inspired visual theme: dark charcoal backgrounds, warm off-white text, vibrant amber/orange accent color for CTAs and highlights, clean sans-serif typography, and generous whitespace. Maintain this theme consistently across all pages and components.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Homepage with featured products and branding",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Product listing page with categories and filters",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Product detail page with images, description, and add-to-cart",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Shopping cart and checkout flow",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Seed the backend with a realistic catalog of at least 12 sample shoe products across multiple categories, each with a name, description, price, category, available sizes, and an image filename.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Shoe Shop",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

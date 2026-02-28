@@ -1,0 +1,140 @@
+{
+  "kind": "build_request",
+  "title": "Shoes Shop E-Commerce Website",
+  "projectName": "Sole Street",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a visually striking homepage with a hero section featuring a tagline, featured/new-arrival shoe products, and clear call-to-action buttons to browse collections.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "create a website for shoes shop"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero section is displayed at the top with a compelling headline and CTA button",
+        "A 'Featured Products' section shows at least 4 shoe product cards",
+        "Navigation bar includes logo/brand name, links to collections, cart icon"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Build a product listing page that displays all available shoes in a grid layout, with filtering by category (e.g., Sneakers, Boots, Sandals, Formal) and sorting options (price, newest).",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "create a website for shoes shop"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Products are displayed in a responsive grid (2–4 columns depending on screen size)",
+        "Category filter buttons narrow down the displayed products",
+        "Sort dropdown allows sorting by price (low-high, high-low) and newest",
+        "Each product card shows image, name, price, and an 'Add to Cart' button"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a product detail page accessible by clicking a product card, showing multiple product images, full description, available sizes, price, and an 'Add to Cart' button.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "create a website for shoes shop"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Product detail page is reachable from the product listing page",
+        "Page displays product name, price, description, and available sizes",
+        "User can select a size before adding to cart",
+        "Add to Cart action updates the cart item count in the navigation bar"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement a shopping cart sidebar or page that lists added items with quantity controls, subtotal, and a checkout summary. Persist cart state in the frontend session.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "create a website for shoes shop"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Cart displays each item with image, name, size, quantity controls, and line total",
+        "User can remove items or change quantity",
+        "Order subtotal is calculated and displayed",
+        "Cart persists during the session (React state or local storage)"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Seed the backend with a realistic catalog of at least 12 sample shoe products across multiple categories, each with a name, description, price, category, available sizes, and an image filename.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "create a website for shoes shop"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend actor stores a list of products with id, name, description, price, category, sizes, and imageFilename fields",
+        "At least 12 products across at least 3 categories are pre-seeded",
+        "Query functions allow fetching all products, by category, and by id"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Apply a bold, modern streetwear-inspired visual theme: dark charcoal backgrounds, warm off-white text, vibrant amber/orange accent color for CTAs and highlights, clean sans-serif typography, and generous whitespace. Maintain this theme consistently across all pages and components.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Color palette uses dark charcoal (#1a1a1a or similar), off-white (#f5f0eb or similar), and amber/orange accents (#e8891a or similar)",
+        "Typography uses a clean modern sans-serif font consistently throughout",
+        "Theme is applied uniformly on homepage, listing page, product detail, and cart"
+      ]
+    }
+  ],
+  "constraints": [
+    "All Motoko backend logic must remain in a single actor file (backend/main.mo)",
+    "Do not edit any files listed in frontend.immutablePaths",
+    "No external payment integrations or real checkout processing"
+  ],
+  "nonGoals": [
+    "Real payment processing or order management system",
+    "User authentication or account management",
+    "Inventory management or stock tracking",
+    "Order history or purchase confirmation emails"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Bold street-style shoe shop logo mark — angular sole silhouette with brand wordmark 'Sole Street' in a modern sans-serif (sole-street-logo.dim_320x80.png)",
+      "Full-width hero banner showing stylish sneakers on a dark background with dramatic side lighting (hero-banner.dim_1440x600.png)",
+      "Product photo: white minimalist sneaker on clean background (shoe-sneaker-white.dim_600x600.png)",
+      "Product photo: black leather ankle boot on clean background (shoe-boot-black.dim_600x600.png)",
+      "Product photo: tan suede casual loafer on clean background (shoe-loafer-tan.dim_600x600.png)",
+      "Product photo: neon-accented running sneaker on clean background (shoe-runner-neon.dim_600x600.png)",
+      "Product photo: brown classic oxford dress shoe on clean background (shoe-oxford-brown.dim_600x600.png)",
+      "Product photo: strappy sandal in nude/beige tones on clean background (shoe-sandal-nude.dim_600x600.png)"
+    ],
+    "edits": []
+  }
+}
